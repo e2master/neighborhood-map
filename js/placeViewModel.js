@@ -68,6 +68,8 @@ var placeViewModel = function() {
 	// 列表点击对应标记跳动并显示信息窗口
 	self.placeClick = function(data) {
 		showMarkerInfo(data);
+		showInfoWindow(data);
 	}
+	
 };
 ko.applyBindings(new placeViewModel());
