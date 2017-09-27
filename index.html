@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>公共设施搜索</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+
+	<body>
+		<div id="container">
+			<div id="control" data-bind="style: {width: controlShow() ? '260px' : '0'}">
+				<div id="search">
+					<input type="text" id="key-value" data-bind="value: keyValue" placeholder="输入单位名称或地名查找"/>
+					<ul data-bind="foreach: placeTypes">
+						
+						<li data-bind="click: $root.typeClick, css: { filterselected: $root.typeSelectes.indexOf($data) > -1 }" class="filter">
+							<img data-bind="attr: {src: $data.img, alt: $data.type}">					
+						</li>
+					</ul>
+				</div>
+				<div id="places">
+					
+				</div>
+
+			</div>
+			<div id="main">
+				<div id="nav">
+					<img src="img/navigator.png" data-bind="click: toggleControl" />
+				</div>
+				<div id="map">
+
+				</div>
+
+			</div>
+		</div>
+		<script type="text/javascript" src="js/lib/knockout-3.2.0.js"></script>
+		<script type="text/javascript" src="js/places.js"></script>
+		<script type="text/javascript" src="js/placeViewModel.js"></script>
+	</body>
+
+</html>

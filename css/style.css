@@ -1,0 +1,52 @@
+html {
+	height: 100%;
+	width: 100%;
+}
+body {
+	height: 100%;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+}
+#container {
+	display: flex;
+	height: 100%;
+}
+#control {
+	height: 100%;
+	background-color: blue;
+	transition: width 0.3s;
+}
+#search {
+	background-color: lightgrey;
+	padding: 4px;
+}
+ul, li{
+	padding: 0;
+	margin: 0;
+}
+.filterselected {
+ 	border-top: 1px solid #717171 !important; 
+	border-left: 1px solid #717171 !important;
+	border-bottom: 1px solid #FFFFFF !important;
+	border-right: 1px solid #FFFFFF !important;
+}
+.filter {
+	list-style: none;
+	display: inline-block;
+	border: 1px solid lightgrey;
+	margin-top: 4px;
+}
+.filter:hover {
+	background-color: aliceblue;
+ }
+#main {
+	height: 100%;
+	width: 100%;
+}
+#nav {
+	background-color: darkgray;
+}
+#nav img {
+	cursor: pointer;
+}
