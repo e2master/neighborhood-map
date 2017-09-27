@@ -4,22 +4,32 @@
 	<head>
 		<meta charset="utf-8" />
 		<title>公共设施搜索</title>
-		<link rel="stylesheet" href="css/style.css" />
+		<link rel="stylesheet" href="./css/style.css" />
+		<script type="text/javascript" src="http://api.map.baidu.com/api?v=2.0&ak=SypiSNsMblgCqwIzxEXzkOGVAKpTw1ZK"></script>
 	</head>
 
 	<body>
 		<div id="container">
-			<div id="control" data-bind="style: {width: controlShow() ? '260px' : '0'}">
+			<div id="control" data-bind="style: {width: controlShow() ? '300px' : '0'}">
 				<div id="search">
-					<input type="text" id="key-value" data-bind="value: keyValue" placeholder="输入单位名称或地名查找"/>
+					<input type="text" id="key-value" data-bind="value: keyValue" placeholder="输入单位名称或地名筛选"/>
 					<ul data-bind="foreach: placeTypes">
 						
-						<li data-bind="click: $root.typeClick, css: { filterselected: $root.typeSelectes.indexOf($data) > -1 }" class="filter">
-							<img data-bind="attr: {src: $data.img, alt: $data.type}">					
+						<li data-bind="click: $root.typeClick, 
+							css: { filterselected: $root.typeSelectes.indexOf($data) > -1 }"
+							class="filter">
+							<img data-bind="attr: {src: $data.img, alt: $data.type, title: $data.name}" >					
 						</li>
 					</ul>
 				</div>
 				<div id="places">
+					<ul data-bind="foreach: myPlaces">
+						<li data-bind="click: $root.placeClick">
+							<span class="placename" data-bind="text: name"></span>
+							<br /> 地址：
+							<span data-bind="text: addr"></span>
+						</li>
+					</ul>
 					
 				</div>
 
@@ -36,6 +46,7 @@
 		</div>
 		<script type="text/javascript" src="js/lib/knockout-3.2.0.js"></script>
 		<script type="text/javascript" src="js/places.js"></script>
+		<script type="text/javascript" src="js/main.js" ></script>
 		<script type="text/javascript" src="js/placeViewModel.js"></script>
 	</body>
 

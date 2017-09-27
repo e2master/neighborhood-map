@@ -14,12 +14,15 @@ body {
 }
 #control {
 	height: 100%;
-	background-color: blue;
 	transition: width 0.3s;
+	background-color: lightgrey;
+	border-right: 1px solid darkgray;
 }
 #search {
-	background-color: lightgrey;
 	padding: 4px;
+}
+#control {
+	overflow: hidden;
 }
 ul, li{
 	padding: 0;
@@ -40,6 +43,20 @@ ul, li{
 .filter:hover {
 	background-color: aliceblue;
  }
+#places{
+	height: 100%;
+	overflow: auto;
+ }
+#places li {
+	margin: 4px 0;
+	padding: 4px;
+	font-size: 12px;
+	background-color: white;
+	cursor: pointer;
+}
+.placename {
+	font-size: 14px;
+}
 #main {
 	height: 100%;
 	width: 100%;
@@ -50,3 +67,8 @@ ul, li{
 #nav img {
 	cursor: pointer;
 }
+#map {
+	height: 100%;
+}
+
+
